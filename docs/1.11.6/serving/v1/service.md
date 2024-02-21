@@ -9,6 +9,8 @@ permalink: /1.11.6/serving/v1/service/
 ## Index
 
 * [`fn new(name)`](#fn-new)
+* [`fn mapContainers(f)`](#fn-mapcontainers)
+* [`fn mapContainersWithName(names, f)`](#fn-mapcontainerswithname)
 * [`obj metadata`](#obj-metadata)
   * [`fn withAnnotations(annotations)`](#fn-metadatawithannotations)
   * [`fn withAnnotationsMixin(annotations)`](#fn-metadatawithannotationsmixin)
@@ -280,6 +282,29 @@ new(name)
 ```
 
 new returns an instance of Service
+
+### fn mapContainers
+
+```ts
+mapContainers(f)
+```
+
+`mapContainers` applies the function f to each container.
+It works exactly as `std.map`, but on the containers of this object.
+
+**Signature of `f`**:
+```ts
+f(container: Object) Object
+```
+
+
+### fn mapContainersWithName
+
+```ts
+mapContainersWithName(names, f)
+```
+
+`mapContainersWithName` is like `mapContainers`, but only applies to those containers in the `names` array
 
 ## obj metadata
 
